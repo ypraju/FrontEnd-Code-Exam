@@ -3,7 +3,7 @@ Front end Code exam instructions for SCU
 
 “Applicants Name” : “Date”, 2021
 
-1.	Pull the repository and create a branch off of master.
+1.	Clone the repository and create a branch off of master.
 
 2.	Create a Vue app in visual studio code.
     **Required**
