@@ -1,13 +1,14 @@
 <template>
   <div class="todo-list">
     <UserInput :handleSubmit="handleSubmit" />
-    <List :list="list" />
+    <List v-bind:list="list" />
   </div>
 </template>
 
 <script>
 import UserInput from "./UserInput.vue";
 import List from "./List.vue";
+import { ToDoListApi } from "../api/to-do-list-api";
 
 export default {
   name: "TodoList",
@@ -16,21 +17,21 @@ export default {
     UserInput,
     List,
   },
-  data: () => ({
-    list: [
-      {
-        id: 1,
-        task: "buy eggs",
-      },
-    ],
-  }),
+  data: function () {
+    return {
+      list: [],
+    };
+  },
   methods: {
     handleSubmit: (data) => {
       console.log(data);
     },
   },
-  mounted: () => {
-    console.log("Im mounted");
+  mounted: async function () {
+    const list = await ToDoListApi.getList();
+    this.list = [...list];
+
+    await ToDoListApi.addTask("add task from browser");
   },
 };
 </script>
