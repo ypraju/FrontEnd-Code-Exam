@@ -2,18 +2,20 @@
   <div class="todo-list">
     <i-container>
       <i-row center-xs>
-        <i-column xs="12" xl="4">
-          <i-layout>
-            <i-layout-header class="header-text"> To Do List </i-layout-header>
-            <i-layout-content>
+        <i-column md="8">
+          <div
+            class="wrapper _background-gray-10 _rounded _border-color-gray-90"
+          >
+            <h2 class="header-text">To Do List</h2>
+            <main>
               <UserInput :addTask="addTask" />
               <List
                 v-bind:list="list"
                 :deleteTask="deleteTask"
                 :updateTask="updateTask"
               />
-            </i-layout-content>
-          </i-layout>
+            </main>
+          </div>
         </i-column>
       </i-row>
     </i-container>
@@ -64,16 +66,17 @@ export default {
 
 <style scoped>
 .todo-list {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  color: darkmagenta;
+  border: 1px darkgray solid;
+}
+
+.wrapper {
+  height: 95vh;
+  overflow: auto;
+  margin-top: 25px;
 }
 
 .header-text {
-  font-weight: bolder;
-  width: auto;
   font-size: 40px;
-  color: #53980d;
+  padding: 15px;
 }
 </style>

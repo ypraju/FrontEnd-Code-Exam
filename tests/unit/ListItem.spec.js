@@ -64,13 +64,13 @@ describe('Test ListItem ', () => {
     userEvent.click(screen.getByRole('button', {
       name: /edit/i
     }));
-    await screen.findByText(/save/i);
+    await screen.findByText(/update/i);
 
     // update the text and save
     const inputBox = screen.getByRole('textbox');
     userEvent.clear(inputBox);
     userEvent.type(inputBox, 'buy pen');
-    userEvent.click(screen.getByText(/save/i));
+    userEvent.click(screen.getByText(/update/i));
     await waitFor(() => {
       expect(updateTaskMock).toHaveBeenCalledWith(1, 'buy pen');
     });

@@ -11,9 +11,7 @@ describe('Test UserInput ', () => {
       }
     });
 
-    screen.getByPlaceholderText(/enter your task/i);
-    screen.getByRole('button', {
-      name: /add/i
-    });
+    screen.getByPlaceholderText(/add a new task/i);
+    screen.getByTestId('add-task-button');
   });
 });

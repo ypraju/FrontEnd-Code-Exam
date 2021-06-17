@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="_background-envato">
     <TodoList />
   </div>
 </template>
@@ -16,4 +16,7 @@ export default {
 </script>
 
 <style>
+#app {
+  min-height: 100vh;
+}
 </style>

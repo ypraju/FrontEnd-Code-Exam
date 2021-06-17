@@ -14,16 +14,16 @@
 </template>
 
 <script>
-import ListItem from './ListItem.vue';
+import ListItem from "./ListItem.vue";
 
 export default {
   components: {
-    ListItem
+    ListItem,
   },
   props: {
     list: Array,
     deleteTask: Function,
-    updateTask: Function
+    updateTask: Function,
   },
   name: "list",
 };
@@ -33,5 +33,21 @@ export default {
 .list {
   padding: 10px;
   margin: 10px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 5px;
+}
+
+ul li {
+  background: #dee2e6;
+  padding: 10px;
+  animation-delay: 1s;
+}
+
+ul li:nth-child(odd) {
+  background: #adb5bd;
 }
 </style>

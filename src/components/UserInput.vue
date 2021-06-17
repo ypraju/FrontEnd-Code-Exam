@@ -1,26 +1,29 @@
 <template>
   <form class="user-input">
-    <label class="margin" id="input-text" for="input-task">
-      Add your new task to the list
-    </label>
-    <i-input
-      type="text"
-      for="input-text"
-      v-model="task"
-      id="input-task"
-      placeholder="Enter your task"
-      clearable
-    />
-    <button
-      type="button"
-      variant="success"
-      value="add"
-      class="simple-linear"
-      @click="handleAddTask"
-      :disabled="!task"
-    >
-      Add
-    </button>
+    <div class="input-container">
+      <i-input
+        type="text"
+        for="input-text"
+        v-model="task"
+        id="input-task"
+        placeholder="Add a new task"
+        autocomplete="off"
+        size="lg"
+        maxlength="80"
+        data-testid="add-task-button"
+      />
+      <i-button
+        type="button"
+        variant="success"
+        value="add"
+        class="button"
+        @click="handleAddTask"
+        :disabled="!task"
+        size="md"
+      >
+        Add
+      </i-button>
+    </div>
   </form>
 </template>
 
@@ -44,24 +47,16 @@ export default {
 </script>
 
 <style scoped>
-#input-text,
-input {
-  margin: 5px;
-  color: darkslategray;
-  font-size: larger;
-  margin-top: 30px;
-}
-margin {
-  margin-top: 40px;
-}
-button {
-  width: 180px;
-  margin-top: 20px;
-  background: #53980d;
-}
-.simple-linear {
-  background: linear-gradient(#53980d, darkslategray);
-  height: 40px;
+.button {
   color: white;
+}
+
+.button:active {
+  transform: scale(1.2);
+}
+
+.input-container {
+  display: inline-flex;
+  gap: 10px;
 }
 </style>

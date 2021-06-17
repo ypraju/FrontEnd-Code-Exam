@@ -1,6 +1,6 @@
 <template>
   <div v-if="!editMode" class="list-item">
-    {{ task }}
+    <span class="task-text">{{ task }}</span>
     <button class="icons" @click="handleEdit" title="edit">
       <i-icon name="edit" icon="magic" />
     </button>
@@ -17,7 +17,7 @@
       variant="success"
       @click="handleSaveEdited"
       :disabled="!editableText"
-      >Save</i-button
+      >Update</i-button
     >
   </div>
 </template>
@@ -56,6 +56,17 @@ export default {
   padding: 0px;
   text-align: left;
 }
+.task-text {
+  width: 85%;
+  display: inline-block;
+}
+
+@media (max-width: 1200px) {
+  .task-text {
+    width: 75%;
+  }
+}
+
 .icons {
   margin-left: 10px;
 }
