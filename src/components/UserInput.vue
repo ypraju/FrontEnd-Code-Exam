@@ -2,7 +2,15 @@
   <form class="user-input">
     <label id="input-text">New Task</label>
     <input type="text" for="input-text" v-model="task" />
-    <i-button variant="success" type="button" value="add" @click="handleAddTask">Add</i-button>
+    <i-button
+      variant="success"
+      type="button"
+      value="add"
+      :disabled="!task"
+      @click="handleAddTask"
+    >
+      Add
+    </i-button>
   </form>
 </template>
 
@@ -19,9 +27,9 @@ export default {
   methods: {
     handleAddTask: function () {
       this.addTask(this.task);
-      this.task = '';
+      this.task = "";
     },
-  }
+  },
 };
 </script>
 
