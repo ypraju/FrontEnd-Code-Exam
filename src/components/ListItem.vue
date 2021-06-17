@@ -1,15 +1,17 @@
 <template>
   <div v-if="!editMode" class="list-item">
     <span class="task-text">{{ task }}</span>
-    <button class="icons" @click="handleEdit" title="edit">
-      <i-icon name="edit" icon="magic" />
-    </button>
-    <button class="icons" @click="deleteTask(id)" title="delete">
-      <i-icon name="delete" icon="times" />
-    </button>
+    <div class="task-action">
+      <button class="icons" @click="handleEdit" title="edit">
+        <font-awesome-icon icon="edit" class="edit-icon" size="lg" />
+      </button>
+      <button class="icons" @click="deleteTask(id)" title="delete">
+        <font-awesome-icon icon="trash" class="trash-icon" size="lg" />
+      </button>
+    </div>
   </div>
-  <div v-else>
-    <input v-model="editableText" type="text" />
+  <div v-else class="list-item-edit">
+    <input v-model="editableText" type="text" class="edit-text" />
     <i-button
       type="button"
       value="add"
@@ -55,11 +57,19 @@ export default {
 .list-item {
   padding: 0px;
   text-align: left;
+  display: flex;
 }
 .task-text {
-  width: 85%;
+  flex: 1;
   display: inline-block;
   font-size: 1.2rem;
+  font-weight: 500;
+  color: #212529;
+}
+.task-action {
+  display: flex;
+  gap: 5px;
+  margin: -10px;
 }
 
 @media (max-width: 1200px) {
@@ -69,11 +79,32 @@ export default {
 }
 
 .icons {
-  margin-left: 10px;
+  background: #e9ecef;
+  border: none;
+  padding: 0 10px;
 }
+
+.trash-icon {
+  color: #f25f5c;
+}
+
+.edit-icon {
+  color: #5d65b9;
+}
+
 .save-button {
   margin-left: 10px;
   height: 30px;
   width: 80px;
+}
+.edit-text {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #212529;
+}
+.list-item-edit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>
