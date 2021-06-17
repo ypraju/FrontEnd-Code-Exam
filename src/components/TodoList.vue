@@ -6,7 +6,13 @@
           <div
             class="wrapper _background-gray-10 _rounded _border-color-gray-90"
           >
-            <h2 class="header-text">To Do List</h2>
+            <div class="heading-container">
+              <img
+                src="https://cdn2.iconfinder.com/data/icons/business-office-icons/256/To-do_List-512.png"
+                lazy
+              />
+              <h2 class="header-text">Todo List</h2>
+            </div>
             <main>
               <UserInput :addTask="addTask" />
               <List
@@ -76,7 +82,18 @@ export default {
 }
 
 .header-text {
-  font-size: 40px;
-  padding: 15px;
+  font-size: 3rem;
+  padding-left: 10px;
+  font-weight: bolder;
+  margin-bottom: -10px;
+}
+.heading-container {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin-bottom: 25px;
+}
+.heading-container img {
+  height: 50px;
 }
 </style>

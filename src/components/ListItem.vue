@@ -59,11 +59,12 @@ export default {
 .task-text {
   width: 85%;
   display: inline-block;
+  font-size: 1.2rem;
 }
 
 @media (max-width: 1200px) {
   .task-text {
-    width: 75%;
+    width: 70%;
   }
 }
 
