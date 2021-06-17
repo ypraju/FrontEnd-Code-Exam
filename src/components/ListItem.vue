@@ -1,23 +1,24 @@
 <template>
   <div v-if="!editMode" class="list-item">
     {{ task }}
-    <button @click="handleEdit" title="edit">
+    <button class="icons" @click="handleEdit" title="edit">
       <i-icon name="edit" icon="magic" />
     </button>
-    <button @click="deleteTask(id)" title="delete">
+    <button class="icons" @click="deleteTask(id)" title="delete">
       <i-icon name="delete" icon="times" />
     </button>
   </div>
-  <div v-else class="list-item-edit">
+  <div v-else>
     <input v-model="editableText" type="text" />
     <i-button
       type="button"
       value="add"
-      :disabled="!editableText"
+      class="save-button"
+      variant="success"
       @click="handleSaveEdited"
+      :disabled="!editableText"
+      >Save</i-button
     >
-      Save
-    </i-button>
   </div>
 </template>
 
@@ -54,5 +55,13 @@ export default {
 .list-item {
   padding: 0px;
   text-align: left;
+}
+.icons {
+  margin-left: 10px;
+}
+.save-button {
+  margin-left: 10px;
+  height: 30px;
+  width: 80px;
 }
 </style>

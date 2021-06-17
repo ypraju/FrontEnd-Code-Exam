@@ -1,16 +1,26 @@
 <template>
   <form class="user-input">
-    <label id="input-text">New Task</label>
-    <input type="text" for="input-text" v-model="task" />
-    <i-button
-      variant="success"
+    <label class="margin" id="input-text" for="input-task">
+      Add your new task to the list
+    </label>
+    <i-input
+      type="text"
+      for="input-text"
+      v-model="task"
+      id="input-task"
+      placeholder="Enter your task"
+      clearable
+    />
+    <button
       type="button"
+      variant="success"
       value="add"
-      :disabled="!task"
+      class="simple-linear"
       @click="handleAddTask"
+      :disabled="!task"
     >
       Add
-    </i-button>
+    </button>
   </form>
 </template>
 
@@ -36,6 +46,22 @@ export default {
 <style scoped>
 #input-text,
 input {
-  margin: 0 5px;
+  margin: 5px;
+  color: darkslategray;
+  font-size: larger;
+  margin-top: 30px;
+}
+margin {
+  margin-top: 40px;
+}
+button {
+  width: 180px;
+  margin-top: 20px;
+  background: #53980d;
+}
+.simple-linear {
+  background: linear-gradient(#53980d, darkslategray);
+  height: 40px;
+  color: white;
 }
 </style>
