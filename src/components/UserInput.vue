@@ -2,7 +2,7 @@
   <form class="user-input">
     <label id="input-text">New Task</label>
     <input type="text" for="input-text" v-model="task" />
-    <input type="button" value="add" @click="handleSubmit(task)" />
+    <i-button variant="success" type="button" value="add" @click="handleAddTask">Add</i-button>
   </form>
 </template>
 
@@ -11,11 +11,17 @@ export default {
   components: {},
   name: "UserInput",
   props: {
-    handleSubmit: Function,
+    addTask: Function,
   },
   data: () => ({
     task: "",
   }),
+  methods: {
+    handleAddTask: function () {
+      this.addTask(this.task);
+      this.task = '';
+    },
+  }
 };
 </script>
 
