@@ -64,7 +64,6 @@ export default {
   display: inline-block;
   font-size: 1.2rem;
   font-weight: 500;
-  color: #212529;
 }
 .task-action {
   display: flex;
@@ -100,7 +99,6 @@ export default {
 .edit-text {
   font-size: 1.2rem;
   font-weight: 500;
-  color: #212529;
 }
 .list-item-edit {
   display: flex;

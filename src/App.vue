@@ -18,7 +18,6 @@ export default {
 <style>
 #app {
   min-height: 100vh;
-  background-color: #3bb78f;
   background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
 }
 </style>

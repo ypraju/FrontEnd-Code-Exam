@@ -45,9 +45,12 @@ ul li {
   background: #dee2e6;
   padding: 10px;
   animation-delay: 1s;
+  color: #212529;
 }
 
 ul li:nth-child(odd) {
-  background: #adb5bd;
+  background: #868e96;
+  background: linear-gradient(to right, #868e96, #ced4da);
+  color: #f8f9fa;
 }
 </style>
