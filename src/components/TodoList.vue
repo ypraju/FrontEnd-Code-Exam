@@ -43,20 +43,27 @@ export default {
   data: function () {
     return {
       list: [],
+      isLoading: false,
     };
   },
   methods: {
     addTask: async function (data) {
+      this.$loading(true);
       await ToDoListApi.addTask(data);
       await this.updateList();
+      this.$loading(true);
     },
     updateList: async function () {
+      this.$loading(true);
       const todos = await ToDoListApi.getList();
       this.list = todos;
+      this.$loading(false);
     },
     updateTask: async function (id, newTask) {
+      this.$loading(true);
       await ToDoListApi.updateTask(id, newTask);
       await this.updateList();
+      this.$loading(true);
     },
     deleteTask: async function (taskId) {
       await ToDoListApi.deleteTask(taskId);
