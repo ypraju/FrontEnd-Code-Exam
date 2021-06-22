@@ -6,6 +6,7 @@ import * as components from '@inkline/inkline/src/components';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import VueLoading from 'vuejs-loading-plugin'
 
 
 library.add(faTrash, faEdit);
@@ -17,6 +18,8 @@ Vue.config.productionTip = false
 Vue.use(Inkline, { components });
 
 Vue.config.productionTip = false
+
+Vue.use(VueLoading);
 
 new Vue({
   render: h => h(App),
