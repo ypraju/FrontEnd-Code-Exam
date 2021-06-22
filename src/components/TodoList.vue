@@ -51,7 +51,7 @@ export default {
       this.$loading(true);
       await ToDoListApi.addTask(data);
       await this.updateList();
-      this.$loading(true);
+      this.$loading(false);
     },
     updateList: async function () {
       this.$loading(true);
@@ -63,11 +63,13 @@ export default {
       this.$loading(true);
       await ToDoListApi.updateTask(id, newTask);
       await this.updateList();
-      this.$loading(true);
+      this.$loading(false);
     },
     deleteTask: async function (taskId) {
+      this.$loading(true);
       await ToDoListApi.deleteTask(taskId);
       await this.updateList();
+      this.$loading(false);
     },
   },
   mounted: async function () {
